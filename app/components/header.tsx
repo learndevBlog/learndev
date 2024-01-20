@@ -1,33 +1,25 @@
 'use client'
-import { Button, Link, Menu, MenuItem, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import Image from 'next/image'
 
 import * as React from 'react';
 import tw from 'tailwind-styled-components';
+import { CustomLink } from './CustomLink';
+import { CustomDropdown } from './CustomDropdown';
 
 
 export const Header = () => {
   const [product, setProduct] = React.useState(null);
   const [resource, setResource] = React.useState(null);
 
-  const handleProductClick = (event: any) => {
-    setProduct(event.currentTarget);
-  };
-  const handleResourceClick = (event: any) => {
-    setResource(event.currentTarget);
-  };
-
-  const handleProductClose = () => {
-    setProduct(null);
-  };
-  const handleResourceClose = () => {
-    setResource(null);
-  };
+  const login = () => {
+    console.log('login')
+  }
 
   return (
     <Container>
       <Nav>
-        <div className='flex items-center gap-10'>
+        <div className='flex items-center flex-1 gap-4'>
           <LogoContainer className=''>
             <Image
               src="/images/learndev-logo.png"
@@ -38,56 +30,43 @@ export const Header = () => {
             <Typography style={{ fontSize: '1.5rem' }}>Learndev</Typography>
           </LogoContainer>
           <MenuContainer>
-            <Link href="/">Home</Link>
-            <div className='flex items-center gap-5'>
-              <Link href="#" onClick={handleProductClick}>
-                <Typography style={{ fontSize: '1rem', color:"black" }}>Products</Typography>
-              </Link>
-              <Menu
-                id="basic-menu"
-                anchorEl={product}
-                open={Boolean(product)}
-                onClose={handleProductClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-              >
-                <MenuItem onClick={handleProductClose}>
-                  <Typography style={{ fontSize: '1rem' }}>Profile</Typography>
-                </MenuItem>
-                <MenuItem onClick={handleProductClose}>
-                  <Typography style={{ fontSize: '1rem', color:"black" }}>My Account</Typography>
-                </MenuItem>
-              </Menu>
-            </div>
-            <div>
-              <Link href="#" onClick={handleResourceClick}>
-                <Typography style={{ fontSize: '1rem' }}>Resources</Typography>
-              </Link>
-              <Menu
-                id="basic-menu"
-                anchorEl={resource}
-                open={Boolean(resource)}
-                onClose={handleResourceClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-              >
-                <MenuItem onClick={handleResourceClose}>
-                  <Typography style={{ fontSize: '1rem' }}>Resource 1</Typography>
-                </MenuItem>
-                <MenuItem onClick={handleResourceClose}>
-                  <Typography style={{ fontSize: '1rem' }}>Resource 2</Typography>
-                </MenuItem>
-              </Menu>
-            </div>
-            <Link href="/pricing">Pricing</Link>
+            <CustomLink classname='text-semibold' href="/home">Home</CustomLink>
+            <CustomDropdown label='products' state={product} setState={setProduct} classname='text-semibold'>
+              <CustomLink href='/product-1'>Product 1</CustomLink>
+              <CustomLink href='/product-2'>Product 2</CustomLink>
+            </CustomDropdown>
+
+            <CustomDropdown label='resources' state={resource} setState={setResource} classname='text-semibold'>
+              <CustomLink href='/resource-1'>Resource 1</CustomLink>
+              <CustomLink href='/resource-2'>Resource 2</CustomLink>
+              <CustomLink href='/resource-3'>Resource 3</CustomLink>
+            </CustomDropdown>
+
+            <CustomLink href="/pricing" classname='text-semibold'>Pricing</CustomLink>
           </MenuContainer>
           </div>
 
-        <AuthComponent>
-          <Button color='primary' size='medium' variant="text" href='#'>Log In</Button>
-          <Button color='primary' size='medium' variant="contained" href='#'>Sign Up</Button>
+        <AuthComponent className=''>
+          <Button 
+              color='primary' 
+              size='medium' 
+              variant="outlined" 
+              href='#' 
+              sx={{ borderRadius: 50, transform: 'none' }}
+              style={{textTransform: 'none'}}
+              > 
+              Log In
+            </Button>
+          <Button 
+              color='primary' 
+              size='medium' 
+              variant="contained" 
+              href='#' 
+              sx={{ borderRadius: 50, transform: 'none', backgroundColor: '#000' }}
+              style={{textTransform: 'none'}}
+              > 
+              Sign Up
+            </Button>
           {/* <CustomButton backgroundColor='#000' variant='contained'>Teste</CustomButton> */}
         </AuthComponent>
       </Nav>
@@ -99,6 +78,7 @@ const Container = tw.div`
   px-12
   w-full
   py-4
+  gap-4
 `
 
 const Nav = tw.nav`
@@ -115,10 +95,14 @@ const LogoContainer = tw.div`
 
 const MenuContainer = tw.div`
   flex
+  flex-1
   items-center
-  gap-4
+  gap-14
+  ml-10
 `
 
 const AuthComponent = tw.div`
-  
+  flex  
+  items-center
+  gap-4
 `

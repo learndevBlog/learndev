@@ -1,10 +1,11 @@
 'use client'
 import { Box, Tab, Tabs } from '@mui/material';
-import { Header } from './components/header';
+
 import { Subscription } from './components/Subscription';
 import React from 'react';
 import { CustomTabPanel } from './components/CustomTabPanel';
 import PostFrontView from './components/PostFrontView';
+import { Header } from './components/header';
 
 
 
