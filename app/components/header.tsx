@@ -1,5 +1,5 @@
 'use client'
-import { Button, Typography } from '@mui/material';
+import { Button } from '@mui/material';
 import Image from 'next/image'
 
 import * as React from 'react';
@@ -12,10 +12,6 @@ export const Header = () => {
   const [product, setProduct] = React.useState(null);
   const [resource, setResource] = React.useState(null);
 
-  const login = () => {
-    console.log('login')
-  }
-
   return (
     <Container>
       <Nav>
@@ -27,22 +23,22 @@ export const Header = () => {
               height={50}
               alt="Learn dev log"
             />
-            <Typography style={{ fontSize: '1.5rem' }}>Learndev</Typography>
+            Learndev
           </LogoContainer>
           <MenuContainer>
             <CustomLink classname='text-semibold' href="/home">Home</CustomLink>
             <CustomDropdown label='products' state={product} setState={setProduct} classname='text-semibold'>
-              <CustomLink href='/product-1'>Product 1</CustomLink>
-              <CustomLink href='/product-2'>Product 2</CustomLink>
+              <CustomLink href='#'>Product 1</CustomLink>
+              <CustomLink href='#'>Product 2</CustomLink>
             </CustomDropdown>
 
             <CustomDropdown label='resources' state={resource} setState={setResource} classname='text-semibold'>
-              <CustomLink href='/resource-1'>Resource 1</CustomLink>
-              <CustomLink href='/resource-2'>Resource 2</CustomLink>
-              <CustomLink href='/resource-3'>Resource 3</CustomLink>
+              <CustomLink href='#'>Resource 1</CustomLink>
+              <CustomLink href='#'>Resource 2</CustomLink>
+              <CustomLink href='#'>Resource 3</CustomLink>
             </CustomDropdown>
 
-            <CustomLink href="/pricing" classname='text-semibold'>Pricing</CustomLink>
+            <CustomLink href="#" classname='text-semibold'>Pricing</CustomLink>
           </MenuContainer>
           </div>
 
@@ -97,7 +93,7 @@ const MenuContainer = tw.div`
   flex
   flex-1
   items-center
-  gap-14
+  gap-8
   ml-10
 `
 

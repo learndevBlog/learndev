@@ -1,5 +1,4 @@
-'use client'
-import { Typography, TextField, Button } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import tw from "tailwind-styled-components";
 
 export const Subscription = () => {
@@ -10,17 +9,25 @@ export const Subscription = () => {
 
     return (
         <Container>
-            <div>
-                <Typography style={{ fontSize: '3rem' }}>Learndev Blog</Typography>
-                <div className="mt-5 flex items-center">
-                    <TextField label="Email" variant="outlined" />
-                    <Button variant="outlined" onClick={handleSubscribe}>Subscribe</Button>
+                <span className="font-bold text-4xl">Learndev Blog</span>
+                <div className="mt-5 flex items-center w-1/3">
+                    <TextField 
+                        fullWidth 
+                        label="Email" 
+                        variant="standard" 
+                    />
+                    <Button 
+                        color='primary' 
+                        size='medium' 
+                        variant="contained" 
+                        href='#' 
+                        sx={{ borderRadius: 50, transform: 'none', backgroundColor: '#000' }}
+                        style={{textTransform: 'none'}}
+                        > 
+                        Subscribe
+                    </Button>
                 </div>
-            </div>
-            <div>
-                <p><Typography style={{ fontSize: '1rem', color: 'gray' }}>New products features, the latest in</Typography></p>
-                <p><Typography style={{ fontSize: '1rem', color: 'gray'}}>technology, solutions and updates</Typography></p>
-            </div>
+           
         </Container>
     );
 };
@@ -30,6 +37,6 @@ const Container = tw.div`
     h-64
     px-12
     flex
-    justify-between
-    items-center
+    flex-col
+    justify-center
 `

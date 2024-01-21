@@ -1,8 +1,9 @@
+'use client'
 import React from 'react'
 import { CustomLink } from './CustomLink'
-import { Menu, MenuItem, Typography } from '@mui/material'
+import { Menu, MenuItem } from '@mui/material'
 import { toTitleCase } from '../utils'
-import { ArrowDownIcon, ChevronDownIcon } from '@heroicons/react/16/solid'
+import { ChevronDownIcon } from '@heroicons/react/16/solid'
 
 export const CustomDropdown = ({
     label,
@@ -29,7 +30,7 @@ export const CustomDropdown = ({
     <div>
         <CustomLink href="#" onClick={handleClick}>
             <div className='flex items-center gap-2'>
-                <Typography style={{ fontSize: '1rem' }}>{toTitleCase(label)}</Typography>
+                {toTitleCase(label)}
                 <ChevronDownIcon className='w-4 h-4' />
             </div>
         </CustomLink>
