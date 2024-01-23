@@ -34,7 +34,7 @@ export const Subscription = () => {
 
 
 const Container = tw.div`
-    h-64
+    h-48
     px-12
     flex
     flex-col
