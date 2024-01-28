@@ -55,7 +55,7 @@ const Page = () => {
   }, []);
 
   const postsByCategory = useMemo(() => {
-    if (selectedCategory === 0) {
+    if (selectedCategory === 0) { // all categories
       return posts;
     } else if (selectedCategory) {
       return posts.filter(post => post.category.id === selectedCategory);
