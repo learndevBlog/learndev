@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Roboto, Poppins } from 'next/font/google'
 import './globals.css'
 import { Header } from './components/Header'
-
+import { Subscription } from './components/Subscription'
 
 
 const poppins = Poppins({
@@ -10,10 +10,6 @@ const poppins = Poppins({
   subsets: ['latin'],
 })
 
-
-export const metadata: Metadata = {
-  title: 'Learndev',
-}
 
 export default function RootLayout({
   children,
@@ -24,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
           <Header />
+          <Subscription />
           {children}
       </body>
     </html>

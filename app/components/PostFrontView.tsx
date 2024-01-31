@@ -1,90 +1,88 @@
 import { Card, CardContent, CardMedia } from '@mui/material';
 import React from 'react';
 import { CustomLink } from './CustomLink';
-import { Roboto, Poppins, Noto_Sans_Georgian } from 'next/font/google'
-import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
+import { Noto_Sans_Georgian } from 'next/font/google'
+import { 
+    ArrowUpRightIcon, 
+    CalendarDaysIcon, 
+    PencilSquareIcon, 
+    TagIcon 
+} from '@heroicons/react/16/solid';
 import tw from 'tailwind-styled-components';
+import { Post } from '../posts/post';
 
-
-const roboto = Roboto({
+const georgia = Noto_Sans_Georgian({
     weight: ['100', '300', '400', '500', '700', '900'],
     subsets: ['latin'],
-  })
+})
 
-  const georgia = Noto_Sans_Georgian({
-    weight: ['100', '300', '400', '500', '700', '900'],
-    subsets: ['latin'],
-  })
-
-interface PostFrontViewProps {
-    id: string;
-    title: string;
-    description: string;
-    author: string;
-    image: string;
-    publishDate: string;
-    type: string;
-}
-
-export const PostFrontView: React.FC<PostFrontViewProps> = ({ 
-        author, 
-        image, 
-        publishDate, 
-        type,
-        description,
-        title,
-        id
-    }) => {
+export const PostFrontView: React.FC<{ post: Post }> = ({ post }) => {
     return (
         <Container>
             <Card>
-                <CardMedia sx={{ height: 200 }} image={image} />
+                <CardMedia sx={{ height: 200 }} image={post.image} />
                 <StyledCardContent>
-                    <div className='flex flex-col gap-2'>
-                        <span>{author}</span>
-                        <span>{publishDate}</span>
+                    <div className='flex flex-col gap-1'>
+                        <InfoContainer>
+                            <PencilSquareIcon className='w-4 h-4'/> 
+                            <span>
+                                {post.author.length > 25 ? post.author.substring(0, 25) + '...' : post.author}
+                            </span>
+                        </InfoContainer>
+                        <InfoContainer>
+                            <CalendarDaysIcon className='w-4 h-4'/> 
+                            <span>{post.publishDate}</span>
+                        </InfoContainer>
                     </div>
-                    <span>{type}</span>
+                    <InfoContainer>
+                        <TagIcon className='w-4 h-4'/> 
+                        <span>{post.category.name}</span>
+                    </InfoContainer>
                 </StyledCardContent>
             </Card>
             <SummaryContainer>
-                <span className={`${georgia.className} font-bold text-lg`}>{title}</span>
+                <span className={`${georgia.className} font-bold text-lg`}>
+                    {post.title.length > 40 ? post.title.substring(0, 40) + '...' : post.title}
+                </span>
                 <DescriptionContainer 
                     style={{ 
                         display: '-webkit-box', 
                         WebkitLineClamp: 4, 
                         WebkitBoxOrient: 'vertical' 
                     }}
-                    contentEditable
                     >
-                    {description}
+                    {post.description}
                 </DescriptionContainer>
-                <CustomLink classname='mt-5 flex items-center font-semibold text-base' href={`post/${id}`}>
+                {/* TODO nao estou gostando desses classnames gigantesco aqui */}
+                <CustomLink classname='my-3 flex items-center font-semibold text-base' href={`post/${post.id}`}>
                     Read about it
                     <ArrowUpRightIcon className='h-5 w-5' />
                 </CustomLink>
             </SummaryContainer>
-            
         </Container>
     );
 };
 
+// TODO: quando fizer o responsive tem que mudar o tamanho do container
 const Container = tw.div`
-    max-w-[400px] 
-    flex-1
+    w-[400px] 
 `;
 
 const StyledCardContent = tw(CardContent)`
-    flex 
+    flex
+    items-start
     justify-between
     text-sm
+    text-white
+    bg-gray-900
 `;
 
 const SummaryContainer = tw.div`
     flex 
     flex-col 
     gap-2 
-    mt-5
+    mt-2
+    px-2
 `
 
 const DescriptionContainer = tw.div`
@@ -92,4 +90,12 @@ const DescriptionContainer = tw.div`
     leading-5 
     text-sm 
     overflow-hidden
+    h-24
+    text-ellipsis
+`
+
+const InfoContainer = tw.div`
+    flex 
+    gap-1 
+    items-center    
 `
