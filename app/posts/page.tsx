@@ -1,95 +1,40 @@
-'use client'
-import { Box, Tab, Tabs } from '@mui/material';
 
-import React, { useEffect, useMemo, useState } from 'react';
+// server component able to use the next optimization features
+import Head from 'next/head';
+import PostList from "../components/PostList";
+import { categories } from "./category";
+import { posts } from "./post";
 
-import { Post, posts } from './post';
-import { CustomTabPanel } from '../components/CustomTabPanel';
-import { PostFrontView } from '../components/PostFrontView';
-import { Category, categories } from './category';
 
-// this method do a request to the backend
-const getPosts = async () => {
-  // the await new Promise is just to simulate a request to the backend
-  // I want to test the skeleton loading when the page is loading
-  // await new Promise(resolve => setTimeout(resolve, 2000));
+export const metadata = {
+  title: 'Post List Page',
+  description: 'Page to list posts from learndev blog',
+  keywords: 'learndev, dev, tech, blog, nextjs, react, python, aws, serverless, tailwindcss, typescript, graphql, hasura, postgres, prisma, vercel, netlify, aws-amplify, aws-cdk, aws-lambda, aws-s3, aws-cloudfront, aws-route53, aws-cognito, aws-dynamodb, aws-rds, aws-aurora, aws-ecs, aws-eks, aws-ecr, aws-elasticache, aws-elastic-beanstalk, aws-elastic-load-balancing, aws-elastic-file-system, aws-elastic-map-re',  
+}
+
+async function getPosts() {
+  await new Promise(resolve => setTimeout(resolve, 2000));
   return posts;
 }
 
-// this method do a request to the backend
-const getCategories = async () => {
-  // the await new Promise is just to simulate a request to the backend
-  // I want to test the skeleton loading when the page is loading
-  // await new Promise(resolve => setTimeout(resolve, 2000));
+async function getCategories() {
+  await new Promise(resolve => setTimeout(resolve, 2000));
   return categories; 
 }
 
-export const metatata = {
-  title: 'page',
-  description: ' page',
-  keywords: 'page, nextjs, react',  
-}
-
-const Page = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<number>(0);
-  
-  const handleChange = (event: React.ChangeEvent<{}>, categoryId: number) => {
-    setSelectedCategory(categoryId);
-  };
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const posts = await getPosts();
-      setPosts(posts);
-    };
-
-    const fetchCategories = async () => {
-      const categories = await getCategories();
-      setCategories(categories);
-    };
-
-    fetchPosts();
-    fetchCategories();
-  }, []);
-
-  const postsByCategory = useMemo(() => {
-    if (selectedCategory === 0) { // all categories
-      return posts;
-    } else if (selectedCategory) {
-      return posts.filter(post => post.category.id === selectedCategory);
-    } else{
-      return [];
-    }
-  }, [posts, selectedCategory]);
+const Page = async () => {
+  const posts = await getPosts();
+  const categories = await getCategories();
 
   return (
-    <main>
-        <Box sx={{ width: '100%' }}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={selectedCategory} onChange={handleChange} aria-label="basic tabs example">
-              {categories.map((category: Category) =>
-                <Tab 
-                  key={category.id} 
-                  style={{textTransform: 'none'}} 
-                  label={category.name}
-                />
-              )}
-            </Tabs>
-          </Box>
-             <CustomTabPanel value={selectedCategory} index={selectedCategory}>
-              <div className='flex items-center gap-4 flex-wrap w-full'>
-                {postsByCategory.map((post: Post) => (
-                  <PostFrontView
-                    key={post.id}
-                    post={post}
-                  />
-                ))}
-              </div>
-           </CustomTabPanel>
-        </Box>
-    </main>
+    <>
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+      </Head>
+      <PostList posts={posts} categories={categories} />
+    </>
   )
 }
 
