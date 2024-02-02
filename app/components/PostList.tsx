@@ -27,30 +27,35 @@ const PostList = ({posts, categories}: {posts: Post[], categories: Category[]}) 
 
     return (
         <div>
-          {posts &&
-            <Box sx={{ width: '100%' }}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={selectedCategory} onChange={handleChange} aria-label="basic tabs example">
-                  {categories.map((category: Category) =>
-                    <Tab 
-                      key={category.id} 
-                      style={{textTransform: 'none'}} 
-                      label={category.name}
+          <Box sx={{ width: '100%' }}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+              
+              <Tabs value={selectedCategory} onChange={handleChange} aria-label="basic tabs example">
+                <Tab 
+                  key={0} 
+                  style={{textTransform: 'none'}} 
+                  label="All"
+                />
+                {categories.map((category: Category) =>
+                  <Tab 
+                    key={category.id} 
+                    style={{textTransform: 'none'}} 
+                    label={category.name}
+                  />
+                )}
+              </Tabs>
+            </Box>
+                <CustomTabPanel value={selectedCategory} index={selectedCategory}>
+                <div className='flex items-center gap-4 flex-wrap w-full'>
+                  {postsByCategory.map((post: Post) => (
+                    <PostFrontView
+                      key={post.id}
+                      post={post}
                     />
-                  )}
-                </Tabs>
-              </Box>
-                 <CustomTabPanel value={selectedCategory} index={selectedCategory}>
-                  <div className='flex items-center gap-4 flex-wrap w-full'>
-                    {postsByCategory.map((post: Post) => (
-                      <PostFrontView
-                        key={post.id}
-                        post={post}
-                      />
-                    ))}
-                  </div>
-               </CustomTabPanel>
-            </Box>}
+                  ))}
+                </div>
+              </CustomTabPanel>
+          </Box>
         </div>
       )
 }

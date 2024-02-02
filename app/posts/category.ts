@@ -6,10 +6,6 @@ export type Category = {
 
 export const categories: Category[] = [
     {
-        id: 0,
-        name: 'View All'
-    },
-    {
         id: 1,
         name: 'Design'
     },

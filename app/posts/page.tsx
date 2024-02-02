@@ -14,11 +14,13 @@ export const metadata = {
 
 async function getPosts() {
   await new Promise(resolve => setTimeout(resolve, 2000));
+  // throw new Error('Simulated backend error');
   return posts;
 }
 
 async function getCategories() {
   await new Promise(resolve => setTimeout(resolve, 2000));
+  // throw new Error('Simulated backend error');
   return categories; 
 }
 
