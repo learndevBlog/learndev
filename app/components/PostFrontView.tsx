@@ -1,9 +1,10 @@
-import { Card, CardContent, CardMedia } from '@mui/material';
+import { Card, CardContent } from '@mui/material';
 import React from 'react';
 import { CustomLink } from './CustomLink';
-import { Roboto, Poppins, Noto_Sans_Georgian } from 'next/font/google'
+import { Roboto, Noto_Sans_Georgian } from 'next/font/google'
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 import tw from 'tailwind-styled-components';
+import emotionStyled from '@emotion/styled';
 
 
 const roboto = Roboto({
@@ -35,17 +36,24 @@ export const PostFrontView: React.FC<PostFrontViewProps> = ({
         title,
         id
     }) => {
+        const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+        });
+
     return (
         <Container>
             <Card>
-                <CardMedia sx={{ height: 200 }} image={image} />
-                <StyledCardContent>
-                    <div className='flex flex-col gap-2'>
-                        <span>{author}</span>
-                        <span>{publishDate}</span>
-                    </div>
-                    <span>{type}</span>
-                </StyledCardContent>
+                <StyledCardContentContainer sx={{ background: `url(${image})`, height: 200, backgroundSize: 'cover', padding: '0 !important' }}>
+                    <StyledCardContent className="flex justify-between">
+                        <div className='flex flex-col gap-2'>
+                            <span>{author}</span>
+                            <span style={{ fontWeight: 300 }}>{formattedDate}</span>
+                        </div>
+                        <span>{type}</span>
+                    </StyledCardContent>
+                </StyledCardContentContainer>
             </Card>
             <SummaryContainer>
                 <span className={`${georgia.className} font-bold text-lg`}>{title}</span>
@@ -74,11 +82,20 @@ const Container = tw.div`
     flex-1
 `;
 
-const StyledCardContent = tw(CardContent)`
-    flex 
-    justify-between
-    text-sm
+const StyledCardContentContainer = tw(CardContent)`
+    flex
+    flex-col 
+    justify-end
+    text-sm  
 `;
+
+const StyledCardContent = emotionStyled.div`
+    padding: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    font-weight: 700;
+    backdrop-filter: blur(5px);
+`
 
 const SummaryContainer = tw.div`
     flex 
@@ -93,3 +110,4 @@ const DescriptionContainer = tw.div`
     text-sm 
     overflow-hidden
 `
+

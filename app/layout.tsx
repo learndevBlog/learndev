@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import { Roboto, Poppins } from 'next/font/google'
 import './globals.css'
-import { Header } from './components/Header'
-
-
+import { Header } from './components/header'
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800'],
