@@ -14,10 +14,8 @@ const PostList = ({posts, categories}: {posts: Post[], categories: Category[]}) 
       if (!posts) return [];
       if (selectedCategory === 0) { // all categories
         return posts;
-      } else if (selectedCategory) {
+      } else {
         return posts.filter(post => post.category.id === selectedCategory);
-      } else{
-        return [];
       }
     }, [posts, selectedCategory]);
   
