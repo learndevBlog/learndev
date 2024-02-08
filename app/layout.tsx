@@ -19,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-          <Header />
-          <Subscription />
-          {children}
+          <div className='px-12'>
+            <Header />
+            <Subscription />
+            {children}
+          </div>
       </body>
     </html>
   )

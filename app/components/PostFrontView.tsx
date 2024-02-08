@@ -2,14 +2,13 @@ import { Card, CardContent, CardMedia } from '@mui/material';
 import React from 'react';
 import { CustomLink } from './CustomLink';
 import { Noto_Sans_Georgian } from 'next/font/google'
+import Image from 'next/image'
 import { 
     ArrowUpRightIcon, 
-    CalendarDaysIcon, 
-    PencilSquareIcon, 
-    TagIcon 
 } from '@heroicons/react/16/solid';
 import tw from 'tailwind-styled-components';
 import { Post } from '../posts/post';
+import { UserCircleIcon } from '@heroicons/react/24/outline';
 
 const georgia = Noto_Sans_Georgian({
     weight: ['100', '300', '400', '500', '700', '900'],
@@ -22,22 +21,35 @@ export const PostFrontView: React.FC<{ post: Post }> = ({ post }) => {
             <Card>
                 <CardMedia sx={{ height: 200 }} image={post.image} />
                 <StyledCardContent>
-                    <div className='flex flex-col gap-1'>
-                        <InfoContainer>
-                            <PencilSquareIcon className='w-4 h-4'/> 
-                            <span>
-                                {post.author.length > 25 ? post.author.substring(0, 25) + '...' : post.author}
+                    <div className='flex gap-2'>
+                        {post.author.image ? 
+                        <Image 
+                            className='rounded-full' 
+                            width={40} 
+                            height={40} 
+                            src={post.author.image} 
+                            alt={post.author.name} 
+                        /> : 
+                        <UserCircleIcon className='w-10 h-10'/>}
+                        <div className='flex flex-col'>
+                            <span className='font-semibold'>
+                                {post.author.name.length > 25 ? post.author.name.substring(0, 25) + '...' : post.author.name}
                             </span>
-                        </InfoContainer>
-                        <InfoContainer>
-                            <CalendarDaysIcon className='w-4 h-4'/> 
+                            <span className='text-gray-500'>Software Engineer</span>
+                        </div>
+                       
+                    </div>
+                    <div>
+                        <div >
+                            {/* <TagIcon className='w-4 h-4'/>  */}
+                            <span>{post.category.name}</span>
+                        </div>
+                        <InfoContainer  className='text-gray-500'>
+                            <span>Published</span>
                             <span>{post.publishDate}</span>
                         </InfoContainer>
                     </div>
-                    <InfoContainer>
-                        <TagIcon className='w-4 h-4'/> 
-                        <span>{post.category.name}</span>
-                    </InfoContainer>
+                   
                 </StyledCardContent>
             </Card>
             <SummaryContainer>
@@ -65,16 +77,13 @@ export const PostFrontView: React.FC<{ post: Post }> = ({ post }) => {
 
 // TODO: quando fizer o responsive tem que mudar o tamanho do container
 const Container = tw.div`
-    w-[400px] 
+    w-[430px] 
 `;
 
 const StyledCardContent = tw(CardContent)`
     flex
-    items-start
     justify-between
     text-sm
-    text-white
-    bg-gray-900
 `;
 
 const SummaryContainer = tw.div`
@@ -90,7 +99,7 @@ const DescriptionContainer = tw.div`
     leading-5 
     text-sm 
     overflow-hidden
-    h-24
+    h-10
     text-ellipsis
 `
 
