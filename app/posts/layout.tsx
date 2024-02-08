@@ -7,7 +7,7 @@ export default function PostLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className='px-12'>
+    <div>
       <Suspense fallback={<Loading />}>
         {children}
       </Suspense>

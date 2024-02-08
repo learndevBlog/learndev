@@ -44,7 +44,7 @@ const PostList = ({posts, categories}: {posts: Post[], categories: Category[]}) 
               </Tabs>
             </Box>
                 <CustomTabPanel value={selectedCategory} index={selectedCategory}>
-                <div className='flex items-center gap-4 flex-wrap w-full'>
+                <div className='flex items-center gap-12 flex-wrap w-full'>
                   {postsByCategory.map((post: Post) => (
                     <PostFrontView
                       key={post.id}

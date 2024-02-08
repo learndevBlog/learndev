@@ -26,7 +26,7 @@ export const Header = () => {
             Learndev
           </LogoContainer>
           <MenuContainer>
-            <CustomLink classname='text-semibold' href="/home">Home</CustomLink>
+            <CustomLink classname='text-semibold' href="/">Home</CustomLink>
             <CustomDropdown label='products' state={product} setState={setProduct} classname='text-semibold'>
               <CustomLink href='#'>Product 1</CustomLink>
               <CustomLink href='#'>Product 2</CustomLink>
@@ -38,7 +38,7 @@ export const Header = () => {
               <CustomLink href='#'>Resource 3</CustomLink>
             </CustomDropdown>
 
-            <CustomLink href="#" classname='text-semibold'>Pricing</CustomLink>
+            <CustomLink href="/about" classname='text-semibold'>Sobre</CustomLink>
           </MenuContainer>
           </div>
 
@@ -71,7 +71,6 @@ export const Header = () => {
 }
    
 const Container = tw.div`
-  px-12
   w-full
   py-4
   gap-4
