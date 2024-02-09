@@ -2,10 +2,10 @@
 import { Box, Tab, Tabs } from '@mui/material';
 import React, { useMemo, useState } from 'react';
 
-import { CustomTabPanel } from './CustomTabPanel';
+import { CustomTabPanel } from '../CustomTabPanel';
 import { PostFrontView } from './PostFrontView';
-import { Post } from '../posts/post';
-import { Category } from '../posts/category';
+import { Post } from '../../posts/post';
+import { Category } from '../../posts/category';
 
 const PostList = ({posts, categories}: {posts: Post[], categories: Category[]}) => {
     const [selectedCategory, setSelectedCategory] = useState<number>(0);

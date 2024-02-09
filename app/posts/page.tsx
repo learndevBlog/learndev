@@ -1,7 +1,7 @@
 
 // server component able to use the next optimization features
 import Head from 'next/head';
-import PostList from "../components/PostList";
+import PostList from "../components/Post/PostList";
 import { categories } from "./category";
 import { posts } from "./post";
 
