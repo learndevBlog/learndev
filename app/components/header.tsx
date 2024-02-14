@@ -13,9 +13,9 @@ export const Header = () => {
   const [resource, setResource] = React.useState(null);
 
   return (
-    <Container>
+    <HeaderContainer>
       <Nav>
-        <div className='flex items-center flex-1 gap-4'>
+        <LogoSection>
           <LogoContainer className=''>
             <Image
               src="/images/learndev-logo.png"
@@ -38,11 +38,13 @@ export const Header = () => {
               <CustomLink href='#'>Resource 3</CustomLink>
             </CustomDropdown>
 
-            <CustomLink href="/about" classname='text-semibold'>Sobre</CustomLink>
+            <CustomLink href="/about" classname='text-semibold'>
+              About Us
+            </CustomLink>
           </MenuContainer>
-          </div>
+        </LogoSection>
 
-        <AuthComponent className=''>
+        <AuthSection>
           <Button 
               color='primary' 
               size='medium' 
@@ -63,14 +65,13 @@ export const Header = () => {
               > 
               Sign Up
             </Button>
-          {/* <CustomButton backgroundColor='#000' variant='contained'>Teste</CustomButton> */}
-        </AuthComponent>
+        </AuthSection>
       </Nav>
-    </Container>
+    </HeaderContainer>
   )
 }
    
-const Container = tw.div`
+const HeaderContainer = tw.header`
   w-full
   py-4
   gap-4
@@ -80,6 +81,13 @@ const Nav = tw.nav`
   flex
   items-center
   justify-between
+`
+
+const LogoSection = tw.section`
+  flex
+  items-center
+  flex-1
+  gap-4
 `
 
 const LogoContainer = tw.div`
@@ -96,7 +104,7 @@ const MenuContainer = tw.div`
   ml-10
 `
 
-const AuthComponent = tw.div`
+const AuthSection = tw.section`
   flex  
   items-center
   gap-4

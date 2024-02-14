@@ -1,30 +1,24 @@
 import { Card, CardMedia } from '@mui/material';
 import React from 'react';
 import { CustomLink } from '../CustomLink';
-import { Noto_Sans_Georgian } from 'next/font/google'
 
 import { 
     ArrowUpRightIcon, 
 } from '@heroicons/react/16/solid';
 import tw from 'tailwind-styled-components';
-import { Post } from '../../posts/post';
+import { PostType } from '../../posts/post';
 import { PostInfo } from './PostInfo';
 
 
-const georgia = Noto_Sans_Georgian({
-    weight: ['100', '300', '400', '500', '700', '900'],
-    subsets: ['latin'],
-})
-
-export const PostFrontView: React.FC<{ post: Post }> = ({ post }) => {
+export const PostFrontView: React.FC<{ post: PostType }> = ({ post }) => {
     return (
         <Container>
             <Card>
-                <CardMedia sx={{ height: 200 }} image={post.image} />
+                <CardMedia sx={{ height: 250 }} image={post.image} />
                 <PostInfo post={post} />
             </Card>
             <SummaryContainer>
-                <span className={`${georgia.className} font-bold text-lg`}>
+                <span className='font-bold text-lg mt-5'>
                     {post.title.length > 40 ? post.title.substring(0, 40) + '...' : post.title}
                 </span>
                 <DescriptionContainer 
@@ -34,10 +28,9 @@ export const PostFrontView: React.FC<{ post: Post }> = ({ post }) => {
                         WebkitBoxOrient: 'vertical' 
                     }}
                     >
-                    {post.description}
+                    {post.description.length > 150 ? post.description.substring(0, 150) + '...' : post.description}
                 </DescriptionContainer>
-                {/* TODO nao estou gostando desses classnames gigantesco aqui */}
-                <CustomLink classname='my-3 flex items-center font-semibold text-base' href={`post/${post.id}`}>
+                <CustomLink classname='my-3 flex items-center font-semibold text-base' href={`posts/${post.id}/`}>
                     Read about it
                     <ArrowUpRightIcon className='h-5 w-5' />
                 </CustomLink>
@@ -48,23 +41,26 @@ export const PostFrontView: React.FC<{ post: Post }> = ({ post }) => {
 
 // TODO quando fizer o responsive tem que mudar o tamanho do container
 const Container = tw.div`
-    w-[430px] 
+    w-[650px]
+    mb-14
 `;
 
 const SummaryContainer = tw.div`
-    flex 
+    flex
     flex-col 
     gap-2 
     mt-2
     px-2
+    h-40
 `
 
 const DescriptionContainer = tw.div`
     text-gray-700 
     leading-5 
-    text-sm 
+    text-md
     overflow-hidden
-    h-10
     text-ellipsis
+    leading-6
+    h-32
 `
 

@@ -1,6 +1,6 @@
 import { Category } from "./category";
 
-export type Post = {
+export type PostType = {
     id: string;
     author: {
       name: string;
@@ -13,12 +13,12 @@ export type Post = {
     image: string;
   };
 
-export const posts: Post[] = [
+export const posts: PostType[] = [
     {
         id: '1',
         author: {
           name: 'Thiago Bomfim',
-          image: '/images/web_developer.png'
+          image: '/images/entrepreneur-593371_1920.jpg'
         },
         description: "Nam rerum facilis vel nostrum veniam et enim omnis 33 animi voluptatem et earum laboriosam et odit dicta ut reiciendis aspernatur. Et soluta numquam ea quis quod eum cumque rerum sit pariatur nesciunt ut dolores temporibus. Eos deleniti nobis ab deserunt voluptas qui quam harum aut doloribus ipsa ab quibusdam quidem qui quod rerum sed aliquam quasi. 33 blanditiis consequatur non enim corporis At tempore vero et rerum vitae.",
         title: "How to develop a product from scratch",
@@ -27,7 +27,7 @@ export const posts: Post[] = [
             id: 1,
             name: 'Design'
         },
-        image: '/images/test.jpg'
+        image: '/images/office-1834294_1920.jpg'
     },
     {
         id: '2',
@@ -36,13 +36,13 @@ export const posts: Post[] = [
           image: '/images/solo-leveling.jpeg'
         },
         description: "Nam rerum facilis vel nostrum veniam et enim omnis 35 animi voluptatem et earum laboriosam et odit dicta ut reiciendis aspernatur. Et soluta numquam ea quis quod eum cumque rerum sit pariatur nesciunt ut dolores temporibus. Eos deleniti nobis ab deserunt voluptas qui quam harum aut doloribus ipsa ab quibusdam quidem qui quod rerum sed aliquam quasi. 33 blanditiis consequatur non enim corporis At tempore vero et rerum vitae.",
-        title: "Amazon re:invent 2023",
+        title: "Apple re:invent 2023",
         publishDate: '10/01/2024',
         category: {
           id: 1,
           name: 'Design'
         },
-        image: '/images/aws.jpeg'
+        image: '/images/apple-1868496_1920.jpg'
     },
     {
         id: '3',
@@ -57,7 +57,7 @@ export const posts: Post[] = [
           id: 1,
           name: 'Design'
         },
-        image: '/images/fintech.png'
+        image: '/images/home-office-1867761_1920.jpg'
       },
       {
         id: '4',
@@ -72,7 +72,7 @@ export const posts: Post[] = [
           id: 1,
           name: 'Design'
         },
-        image: '/images/test.jpg'
+        image: '/images/bmw-2788828_1280.jpg'
       },
       {
         id: '5',
@@ -87,7 +87,7 @@ export const posts: Post[] = [
           id: 1,
           name: 'Design'
         },
-        image: '/images/test.jpg'
+        image: '/images/office-1834294_1920.jpg'
       },
       {
         id: '6',
@@ -102,7 +102,7 @@ export const posts: Post[] = [
           id: 2,
           name: 'Development'
         },
-        image: '/images/fintech.png'
+        image: '/images/home-office-1867761_1920.jpg'
       },
       {
         id: '7',
@@ -117,7 +117,7 @@ export const posts: Post[] = [
           id: 2,
           name: 'Development'
         },
-        image: '/images/test.jpg'
+        image: '/images/tao-4911954_1280.jpg'
       },
       {
         id: '8',
@@ -132,7 +132,7 @@ export const posts: Post[] = [
           id: 2,
           name: 'Development'
         },
-        image: '/images/test.jpg'
+        image: '/images/computer-3076956_1280.jpg'
       },
       {
         id: '9',
@@ -147,7 +147,7 @@ export const posts: Post[] = [
           id: 2,
           name: 'Development'
         },
-        image: '/images/fintech.png'
+        image: '/images/tao-4911954_1280.jpg'
       },
       {
         id: '10',
@@ -162,7 +162,7 @@ export const posts: Post[] = [
           id: 2,
           name: 'Development'
         },
-        image: '/images/test.jpg'
+        image: '/images/computer-3076956_1280.jpg'
       },
       {
         id: '11',
@@ -177,7 +177,7 @@ export const posts: Post[] = [
           id: 3,
           name: 'Customer Support'
         },
-        image: '/images/test.jpg'
+        image: '/images/bmw-2788828_1280.jpg'
       },
       {
         id: '12',
@@ -192,7 +192,7 @@ export const posts: Post[] = [
           id: 3,
           name: 'Customer Support'
         },
-        image: '/images/fintech.png'
+        image: '/images/workplace-2303851_1280.jpg'
       },
       {
         id: '13',
@@ -207,7 +207,7 @@ export const posts: Post[] = [
           id: 3,
           name: 'Customer Support'
         },
-        image: '/images/test.jpg'
+        image: '/images/writing-desk-3699950_1280.jpg'
       },
       {
         id: '14',
@@ -222,7 +222,7 @@ export const posts: Post[] = [
           id: 3,
           name: 'Customer Support'
         },
-        image: '/images/test.jpg'
+        image: '/images/writing-desk-3699950_1280.jpg'
       },
       {
         id: '15',
@@ -237,7 +237,7 @@ export const posts: Post[] = [
           id: 3,
           name: 'Customer Support'
         },
-        image: '/images/fintech.png'
+        image: '/images/bmw-2788828_1280.jpg'
       },
       {
         id: ' 16',
@@ -252,7 +252,7 @@ export const posts: Post[] = [
           id: 4,
           name: 'Leadership'
         },
-        image: '/images/test.jpg'
+        image: '/images/workplace-2303851_1280.jpg'
       },
       {
         id: '17',
@@ -267,7 +267,7 @@ export const posts: Post[] = [
           id: 4,
           name: 'Leadership'
         },
-        image: '/images/test.jpg'
+        image: '/images/writing-desk-3699950_1280.jpg'
       },
       {
         id: '18',
@@ -297,7 +297,7 @@ export const posts: Post[] = [
           id: 4,
           name: 'Leadership'
         },
-        image: '/images/test.jpg'
+        image: '/images/workplace-2303851_1280.jpg'
       },
       {
         id: '20',
@@ -312,6 +312,6 @@ export const posts: Post[] = [
           id: 4,
           name: 'Leadership'
         },
-        image: '/images/test.jpg'
+        image: '/images/fintech.png'
       },
   ];

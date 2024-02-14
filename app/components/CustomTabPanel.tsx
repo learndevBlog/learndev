@@ -20,9 +20,9 @@ export const CustomTabPanel = (props: TabPanelProps) => {
         {...other}
       >
         {value === index && (
-          <Box sx={{ py: 3 }}>
+          <div className='py-3'>
             {children}
-          </Box>
+          </div>
         )}
       </div>
     );

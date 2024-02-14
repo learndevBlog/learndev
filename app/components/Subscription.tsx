@@ -1,5 +1,6 @@
 import { TextField, Button } from "@mui/material";
 import tw from "tailwind-styled-components";
+import PageTitle from "./PageTitle";
 
 export const Subscription = () => {
     const handleSubscribe = () => {
@@ -9,7 +10,7 @@ export const Subscription = () => {
 
     return (
         <Container>
-            <span className="font-bold text-4xl">Learndev Blog</span>
+            <PageTitle>Learndev Blog</PageTitle>
             <div className="mt-5 flex items-center w-1/3">
                 <TextField 
                     fullWidth 
@@ -32,9 +33,8 @@ export const Subscription = () => {
 };
 
 
-const Container = tw.div`
-    h-48
+const Container = tw.section`
+    h-32
     flex
     flex-col
-    justify-center
 `
