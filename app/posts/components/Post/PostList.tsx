@@ -2,10 +2,10 @@
 import { Box, Tab, Tabs } from '@mui/material';
 import React, { useMemo, useState } from 'react';
 
-import { CustomTabPanel } from '../CustomTabPanel';
+import { CustomTabPanel } from '../../../components/CustomTabPanel';
 import { PostFrontView } from './PostFrontView';
-import { PostType } from '../../posts/post';
-import { Category } from '../../posts/category';
+import { PostType } from '../../post';
+import { Category } from '../../category';
 
 const PostList = ({posts, categories}: {posts: PostType[], categories: Category[]}) => {
     const [selectedCategory, setSelectedCategory] = useState<number>(0);
@@ -42,7 +42,7 @@ const PostList = ({posts, categories}: {posts: PostType[], categories: Category[
           </Tabs>
         </Box>
         <CustomTabPanel value={selectedCategory} index={selectedCategory}>
-          <div className='flex justify-between flex-wrap w-full mt-5'>
+          <div className='flex gap-20 flex-wrap w-full mt-5'>
             {postsByCategory.map((post: PostType) => (
               <PostFrontView
                 key={post.id}

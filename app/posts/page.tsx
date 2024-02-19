@@ -1,6 +1,6 @@
 
 import Head from 'next/head';
-import PostList from "../components/Post/PostList";
+import PostList from "./components/Post/PostList";
 import { categories } from "./category";
 import { posts } from "./post";
 import { Subscription } from '../components/Subscription';

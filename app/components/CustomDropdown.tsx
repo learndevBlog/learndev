@@ -10,16 +10,21 @@ export const CustomDropdown = ({
     state,
     setState,
     children,
-    classname
+    classname,
+    onClick
 }:{
     children?: React.ReactNode;
     classname?: string;
     label: string,
     state: any,
+    onClick?: () => void
     setState: React.Dispatch<React.SetStateAction<any>>
 }) => {
     const handleClick = (event: any) => {
         setState(event.currentTarget);
+        if (onClick) {
+            onClick();
+        }
       };
 
     const handleClose = () => {
@@ -30,7 +35,7 @@ export const CustomDropdown = ({
     <div>
         <CustomLink href="#" onClick={handleClick}>
             <div className='flex items-center gap-2'>
-                {toTitleCase(label)}
+                <span>{toTitleCase(label)}</span>
                 <ChevronDownIcon className='w-4 h-4' />
             </div>
         </CustomLink>
