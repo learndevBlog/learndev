@@ -3,9 +3,9 @@ import tw from 'tailwind-styled-components';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 import { CardContent } from '@mui/material';
 import Image from 'next/image'
-import { Post } from '@/app/posts/post';
+import { PostType } from '@/app/posts/post';
 
-export const PostInfo = ({post}: {post: Post}) => {
+export const PostInfo = ({post}: {post: PostType}) => {
   const authorName = post.author.name.length > 25 ? post.author.name.substring(0, 25) + '...' : post.author.name;
   return (
     <Container>

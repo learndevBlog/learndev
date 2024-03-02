@@ -2,20 +2,25 @@
 import { Button } from '@mui/material';
 import Image from 'next/image'
 
-import * as React from 'react';
 import tw from 'tailwind-styled-components';
 import { CustomLink } from './CustomLink';
 import { CustomDropdown } from './CustomDropdown';
+import { useState } from 'react';
 
 
 export const Header = () => {
-  const [product, setProduct] = React.useState(null);
-  const [resource, setResource] = React.useState(null);
+  const [product, setProduct] = useState(null);
+  const [resource, setResource] = useState(null);
+  const [active, setActive] = useState<string | null>('home');
+
+  const handleActive = (linkName: string) => {
+    setActive(linkName);
+  }
 
   return (
-    <Container>
+    <HeaderContainer>
       <Nav>
-        <div className='flex items-center flex-1 gap-4'>
+        <LogoSection>
           <LogoContainer className=''>
             <Image
               src="/images/learndev-logo.png"
@@ -26,23 +31,47 @@ export const Header = () => {
             Learndev
           </LogoContainer>
           <MenuContainer>
-            <CustomLink classname='text-semibold' href="/">Home</CustomLink>
-            <CustomDropdown label='products' state={product} setState={setProduct} classname='text-semibold'>
+            <CustomLink 
+              onClick={() => handleActive('home')} 
+              classname={`text-semibold ${active === 'home' ? 'text-blue-500' : ''}`} 
+              href="/"
+              >
+                Home
+              </CustomLink>
+            <CustomDropdown 
+              onClick={() => handleActive('products')} 
+              label='products' 
+              state={product} 
+              setState={setProduct} 
+              classname={`text-semibold ${active === 'products' ? 'text-blue-500' : ''}`} 
+            >
               <CustomLink href='#'>Product 1</CustomLink>
               <CustomLink href='#'>Product 2</CustomLink>
             </CustomDropdown>
 
-            <CustomDropdown label='resources' state={resource} setState={setResource} classname='text-semibold'>
+            <CustomDropdown 
+              onClick={() => handleActive('resources')} 
+              label='resources' 
+              state={resource} 
+              setState={setResource} 
+              classname={`text-semibold ${active === 'resources' ? 'text-blue-500' : ''}`} 
+            >
               <CustomLink href='#'>Resource 1</CustomLink>
               <CustomLink href='#'>Resource 2</CustomLink>
               <CustomLink href='#'>Resource 3</CustomLink>
             </CustomDropdown>
 
-            <CustomLink href="/about" classname='text-semibold'>Sobre</CustomLink>
+            <CustomLink 
+              onClick={() => handleActive('about')} 
+              href="/about" 
+              classname={`text-semibold ${active === 'about' ? 'text-blue-500' : ''}`} 
+            >
+              About Us
+            </CustomLink>
           </MenuContainer>
-          </div>
+        </LogoSection>
 
-        <AuthComponent className=''>
+        <AuthSection>
           <Button 
               color='primary' 
               size='medium' 
@@ -63,14 +92,13 @@ export const Header = () => {
               > 
               Sign Up
             </Button>
-          {/* <CustomButton backgroundColor='#000' variant='contained'>Teste</CustomButton> */}
-        </AuthComponent>
+        </AuthSection>
       </Nav>
-    </Container>
+    </HeaderContainer>
   )
 }
    
-const Container = tw.div`
+const HeaderContainer = tw.header`
   w-full
   py-4
   gap-4
@@ -80,6 +108,13 @@ const Nav = tw.nav`
   flex
   items-center
   justify-between
+`
+
+const LogoSection = tw.section`
+  flex
+  items-center
+  flex-1
+  gap-4
 `
 
 const LogoContainer = tw.div`
@@ -96,7 +131,7 @@ const MenuContainer = tw.div`
   ml-10
 `
 
-const AuthComponent = tw.div`
+const AuthSection = tw.section`
   flex  
   items-center
   gap-4

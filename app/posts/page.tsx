@@ -1,9 +1,9 @@
 
-// server component able to use the next optimization features
 import Head from 'next/head';
-import PostList from "../components/Post/PostList";
+import PostList from "./components/Post/PostList";
 import { categories } from "./category";
 import { posts } from "./post";
+import { Subscription } from '../components/Subscription';
 
 
 export const metadata = {
@@ -13,13 +13,13 @@ export const metadata = {
 }
 
 async function getPosts() {
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  // await new Promise(resolve => setTimeout(resolve, 2000));
   // throw new Error('Simulated backend error');
   return posts;
 }
 
 async function getCategories() {
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  // await new Promise(resolve => setTimeout(resolve, 2000));
   // throw new Error('Simulated backend error');
   return categories; 
 }
@@ -35,6 +35,7 @@ const Page = async () => {
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
       </Head>
+      <Subscription />
       <PostList posts={posts} categories={categories} />
     </>
   )
