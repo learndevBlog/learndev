@@ -17,8 +17,8 @@ export const Subscription = () => {
                     label="Email" 
                     variant="standard" 
                 />
-                <Button 
-                    color='primary' 
+                {/* <Button 
+                    color='primary-pure' 
                     size='medium' 
                     variant="contained" 
                     href='#' 
@@ -26,7 +26,8 @@ export const Subscription = () => {
                     style={{textTransform: 'none'}}
                     > 
                     Subscribe
-                </Button>
+                </Button> */}
+                <button className="text-feedback-helper-light text-display">TESTE</button>
             </div>
         </Container>
     );

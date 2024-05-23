@@ -6,6 +6,7 @@ import tw from 'tailwind-styled-components';
 import { CustomLink } from './CustomLink';
 import { CustomDropdown } from './CustomDropdown';
 import { useState } from 'react';
+import { Logo } from './Design/Logo/Logo';
 
 
 export const Header = () => {
@@ -19,15 +20,11 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
+      <Logo mode='dark' labeled='none' />
       <Nav>
         <LogoSection>
           <LogoContainer className=''>
-            <Image
-              src="/images/learndev-logo.png"
-              width={50}
-              height={50}
-              alt="Learn dev log"
-            />
+            
             Learndev
           </LogoContainer>
           <MenuContainer>

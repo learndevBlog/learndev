@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@400;600;700&display=swap');
+
+
+/* styles/design-tokens.css */
+:root {
+    /* Foundation Colors - Blumine */
+    --foundation-blumine-50: #e7fffd;
+    --foundation-blumine-100: #c2fffa;
+    --foundation-blumine-200: #8cfff6;
+    --foundation-blumine-300: #3dfff0;
+    --foundation-blumine-400: #00ffed;
+    --foundation-blumine-500: #00f3ff;
+    --foundation-blumine-600: #00c0e3;
+    --foundation-blumine-700: #0097b5;
+    --foundation-blumine-800: #007790;
+    --foundation-blumine-900: #005a70;
+    --foundation-blumine-950: #004055;
+
+    /* Foundation Colors - Canary */
+    --foundation-canary-50: #fdffe5;
+    --foundation-canary-100: #f9ffc7;
+    --foundation-canary-200: #f1ff95;
+    --foundation-canary-300: #e5ff66;
+    --foundation-canary-400: #d0f625;
+    --foundation-canary-500: #b1dd05;
+    --foundation-canary-600: #8ab100;
+    --foundation-canary-700: #678605;
+    --foundation-canary-800: #52690b;
+    --foundation-canary-900: #45590e;
+    --foundation-canary-950: #243201;
+
+    /* Foundation Colors - Cinnabar */
+    --foundation-cinnabar-50: #fef3f2;
+    --foundation-cinnabar-100: #fee4e2;
+    --foundation-cinnabar-200: #fececa;
+    --foundation-cinnabar-300: #fdaaa4;
+    --foundation-cinnabar-400: #f97a70;
+    --foundation-cinnabar-500: #ef4134;
+    --foundation-cinnabar-600: #dd3225;
+    --foundation-cinnabar-700: #ba261b;
+    --foundation-cinnabar-800: #9a231a;
+    --foundation-cinnabar-900: #80231c;
+    --foundation-cinnabar-950: #450e0a;
+
+    /* Foundation Colors - Concrete */
+    --foundation-concrete-50: #ffffff;
+    --foundation-concrete-100: #f8f8f8;
+    --foundation-concrete-200: #dcdcdc;
+    --foundation-concrete-300: #bdbdbd;
+    --foundation-concrete-400: #989898;
+    --foundation-concrete-500: #7c7c7c;
+    --foundation-concrete-600: #656565;
+    --foundation-concrete-700: #525252;
+    --foundation-concrete-800: #464646;
+    --foundation-concrete-900: #3d3d3d;
+    --foundation-concrete-950: #292929;
+
+    /* Tokens - Brand Colors */
+    --tokens-brand-color-primary-dark: var(--foundation-blumine-950);
+    --tokens-brand-color-primary-light: var(--foundation-blumine-600);
+    --tokens-brand-color-primary-medium: var(--foundation-blumine-700);
+    --tokens-brand-color-primary-pure: var(--foundation-blumine-800);
+
+    --tokens-brand-color-secondary-dark: var(--foundation-canary-950);
+    --tokens-brand-color-secondary-light: var(--foundation-canary-700);
+    --tokens-brand-color-secondary-medium: var(--foundation-canary-800);
+    --tokens-brand-color-secondary-pure: var(--foundation-canary-500);
+
+    /* Tokens - Feedback Colors */
+    --tokens-feedback-helper-dark: var(--foundation-canary-600);
+    --tokens-feedback-helper-light: var(--foundation-canary-400);
+    --tokens-feedback-helper-medium: var(--foundation-canary-500);
+    --tokens-feedback-helper-pure: var(--foundation-canary-300);
+
+    --tokens-feedback-warning-dark: var(--foundation-cinnabar-800);
+    --tokens-feedback-warning-light: var(--foundation-cinnabar-300);
+    --tokens-feedback-warning-medium: var(--foundation-cinnabar-700);
+    --tokens-feedback-warning-pure: var(--foundation-cinnabar-600);
+
+    /* Tokens - Highlight Colors */
+    --tokens-highlight-dark: var(--foundation-blumine-500);
+    --tokens-highlight-light: var(--foundation-blumine-50);
+    --tokens-highlight-medium: var(--foundation-blumine-200);
+    --tokens-highlight-pure: var(--foundation-blumine-300);
+
+    /* Tokens - Neutral High Colors */
+    --tokens-neutral-high-dark: var(--foundation-concrete-300);
+    --tokens-neutral-high-light: var(--foundation-concrete-100);
+    --tokens-neutral-high-medium: var(--foundation-concrete-200);
+    --tokens-neutral-high-pure: var(--foundation-concrete-50);
+
+    /* Tokens - Neutral Low Colors */
+    --tokens-neutral-low-dark: var(--foundation-concrete-900);
+    --tokens-neutral-low-light: var(--foundation-concrete-400);
+    --tokens-neutral-low-medium: var(--foundation-concrete-700);
+    --tokens-neutral-low-pure: var(--foundation-concrete-950);
+
+    /* Font Family */
+    --font-family-highlight: 'Sora', sans-serif;
+    --font-family-base: 'Inter', sans-serif;
+
+    /* Font Weight */
+    --font-weight-bold: 700;
+    --font-weight-medium: 600;
+    --font-weight-regular: 400;
+
+    /* typography */
+    --font-size-xxxs: 12px;
+    --font-size-xxs: 14px;
+    --font-size-xs: 16px;
+    --font-size-sm: 20px;
+    --font-size-md: 24px;
+    --font-size-lg: 32px;
+    --font-size-xl: 40px;
+    --font-size-xxl: 48px;
+    --font-size-xxxl: 64px;
+    --font-size-display: 80px;
+    --font-size-giant: 96px;
+
+    /* line-height */
+    --line-height-default: 100%;
+    --line-height-xs: 115%;
+    --line-height-sm: 120%;
+    --line-height-md: 133%;
+    --line-height-lg: 150%;
+    --line-height-xl: 170%;
+    --line-height-xxl: 20  0%;
+
+    /* border - radius */
+    --border-radius-none: 0px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-pill: 500px;
+    --border-radius-circular: 50%;
+
+    /* border - width */
+    --border-width-none: 0px;
+    --border-width-hairline: 1px;
+    --border-width-thin: 2px;
+    --border-width-thick: 4px;
+    --border-width-heavy: 8  px;
+
+    /* opacity */
+    --opacity-level-semiopaque: 0.72;
+    --opacity-level-intense: 0.64;
+    --opacity-level-medium: 0.32;
+    --opacity-level-light: 0.16;
+    --opacity-level-semitransparent: 0.08;
+
+    /* shadow */
+    --shadow-level-1: 0px 4px 8px;
+    --shadow-level-2: 0px 8px 24px;
+    --shadow-level-3: 0px 16px 32px;
+    --shadow-level-1: 0px 16px 48px;
+
+    /* spacing */
+    --spacing-quark: 4px;
+    --spacing-nano: 8px;
+    --spacing-xxxs: 16px;
+    --spacing-xxs: 24px;
+    --spacing-xs: 32px;
+    --spacing-sm: 40px;
+    --spacing-md: 48px;
+    --spacing-lg: 56px;
+    --spacing-xl: 64px;
+    --spacing-xxl: 80px;
+    --spacing-xxxl: 120px;
+    --spacing-huge: 160px;
+    --spacing-giant: 200px;
+   
+    /* spacing inset */
+    --spacing-insert-quark: 4px 4px;
+    --spacing-insert-nano: 8px 8px;
+    --spacing-insert-xs: 16px 16px;
+    --spacing-insert-sm: 24px 24px;
+    --spacing-insert-md: 32px 32px;
+    --spacing-insert-lg: 48px 48px;
+
+  
+    /* Bordas */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+  }
+  
