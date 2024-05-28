@@ -34,6 +34,10 @@ const config: Config = {
         'neutral-low-light': 'var(--tokens-neutral-low-light)',
         'neutral-low-medium': 'var(--tokens-neutral-low-medium)',
         'neutral-low-dark': 'var(--tokens-neutral-low-dark)',
+        'highlight-pure': 'var(--tokens-highlight-pure)',
+        'highlight-light': 'var(--tokens-highlight-light)',
+        'highlight-medium': 'var(--tokens-highlight-medium)',
+        'highlight-dark': 'var(--tokens-highlight-dark)',
       },
       fontSize: {
         xxxs: 'var(--font-size-xxxs)',
@@ -126,7 +130,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: []
 };
 
 export default config;

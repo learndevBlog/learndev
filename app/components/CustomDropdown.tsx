@@ -33,12 +33,12 @@ export const CustomDropdown = ({
 
   return (
     <div>
-        <CustomLink href="#" onClick={handleClick}>
+        {/* <CustomLink href="#" onClick={handleClick}>
             <div className='flex items-center gap-2'>
                 <span>{toTitleCase(label)}</span>
                 <ChevronDownIcon className='w-4 h-4' />
             </div>
-        </CustomLink>
+        </CustomLink> */}
         <Menu
             anchorEl={state}
             open={Boolean(state)}

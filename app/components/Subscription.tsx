@@ -1,6 +1,7 @@
 import { TextField, Button } from "@mui/material";
 import tw from "tailwind-styled-components";
 import PageTitle from "./PageTitle";
+import { InputText } from "./Design/Input/Input";
 
 export const Subscription = () => {
     const handleSubscribe = () => {
@@ -28,6 +29,7 @@ export const Subscription = () => {
                     Subscribe
                 </Button> */}
                 <button className="text-feedback-helper-light text-display">TESTE</button>
+             
             </div>
         </Container>
     );

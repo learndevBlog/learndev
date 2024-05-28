@@ -10,7 +10,7 @@ export const PostInfo = ({post}: {post: PostType}) => {
   return (
     <Container>
         <div className='flex gap-2'>
-            {post.author.image ? 
+            {/* {post.author.image ? 
                 <Image 
                     className='rounded-full' 
                     width={40} 
@@ -19,7 +19,7 @@ export const PostInfo = ({post}: {post: PostType}) => {
                     alt={post.author.name} 
                 /> : 
                 <UserCircleIcon className='w-10 h-10'/>
-            }
+            } */}
             <div className='flex flex-col'>
                 <span className='font-semibold'>
                     {authorName}

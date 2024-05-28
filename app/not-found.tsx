@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className='px-12'>
       <h2>Page Not Found</h2>
       <p>Could not find requested resource</p>
-      <CustomLink classname='text-blue-500' href="/">Return Home</CustomLink>
+      {/* <CustomLink classname='text-blue-500' href="/">Return Home</CustomLink> */}
     </div>
   )
 }

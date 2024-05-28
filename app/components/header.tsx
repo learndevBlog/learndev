@@ -7,6 +7,9 @@ import { CustomLink } from './CustomLink';
 import { CustomDropdown } from './CustomDropdown';
 import { useState } from 'react';
 import { Logo } from './Design/Logo/Logo';
+import { Icon } from './Design/Icon/Icon';
+import { InputText } from './Design/Input/Input';
+
 
 
 export const Header = () => {
@@ -19,79 +22,17 @@ export const Header = () => {
   }
 
   return (
-    <HeaderContainer>
-      <Logo mode='dark' labeled='none' />
-      <Nav>
-        <LogoSection>
-          <LogoContainer className=''>
-            
-            Learndev
-          </LogoContainer>
-          <MenuContainer>
-            <CustomLink 
-              onClick={() => handleActive('home')} 
-              classname={`text-semibold ${active === 'home' ? 'text-blue-500' : ''}`} 
-              href="/"
-              >
-                Home
-              </CustomLink>
-            <CustomDropdown 
-              onClick={() => handleActive('products')} 
-              label='products' 
-              state={product} 
-              setState={setProduct} 
-              classname={`text-semibold ${active === 'products' ? 'text-blue-500' : ''}`} 
-            >
-              <CustomLink href='#'>Product 1</CustomLink>
-              <CustomLink href='#'>Product 2</CustomLink>
-            </CustomDropdown>
-
-            <CustomDropdown 
-              onClick={() => handleActive('resources')} 
-              label='resources' 
-              state={resource} 
-              setState={setResource} 
-              classname={`text-semibold ${active === 'resources' ? 'text-blue-500' : ''}`} 
-            >
-              <CustomLink href='#'>Resource 1</CustomLink>
-              <CustomLink href='#'>Resource 2</CustomLink>
-              <CustomLink href='#'>Resource 3</CustomLink>
-            </CustomDropdown>
-
-            <CustomLink 
-              onClick={() => handleActive('about')} 
-              href="/about" 
-              classname={`text-semibold ${active === 'about' ? 'text-blue-500' : ''}`} 
-            >
-              About Us
-            </CustomLink>
-          </MenuContainer>
-        </LogoSection>
-
-        <AuthSection>
-          <Button 
-              color='primary' 
-              size='medium' 
-              variant="outlined" 
-              href='#' 
-              sx={{ borderRadius: 50, transform: 'none' }}
-              style={{textTransform: 'none'}}
-              > 
-              Log In
-            </Button>
-          <Button 
-              color='primary' 
-              size='medium' 
-              variant="contained" 
-              href='#' 
-              sx={{ borderRadius: 50, transform: 'none', backgroundColor: '#000' }}
-              style={{textTransform: 'none'}}
-              > 
-              Sign Up
-            </Button>
-        </AuthSection>
-      </Nav>
-    </HeaderContainer>
+    <div className='flex mt-8 gap-4'>
+      <Logo mode='dark' labeled='h' />
+      <Icon heroicon="HomeIcon" color="dark" size="md" />
+      <InputText
+        invalid={true}
+        disabled={false}
+        design='outlined'
+        leftHeroicon="BellIcon" 
+        placeholder="something to say"
+        rightHeroicon="ArrowRightIcon" 
+        /></div>
   )
 }
    
@@ -132,4 +73,5 @@ const AuthSection = tw.section`
   flex  
   items-center
   gap-4
+  mr-24
 `

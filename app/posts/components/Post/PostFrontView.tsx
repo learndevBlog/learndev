@@ -9,6 +9,7 @@ import tw from 'tailwind-styled-components';
 import { PostType } from '../../post';
 import { PostInfo } from './PostInfo';
 import TextWrapOnLine from '@/app/components/TextWrapOnLine';
+import { Icon } from '@/app/components/Design/Icon/Icon';
 
 
 export const PostFrontView: React.FC<{ post: PostType }> = ({ post }) => {
@@ -17,8 +18,10 @@ export const PostFrontView: React.FC<{ post: PostType }> = ({ post }) => {
             <Card>
                 <CardMedia sx={{ height: 250 }} image={post.image} />
                 <PostInfo post={post} />
+              
             </Card>
-            <SummaryContainer>
+            {/* <SummaryContainer>
+           
                 <TextWrapOnLine wrapOnLine={1} className=' mt-5'>
                     <span className='font-bold text-lg'>
                         {post.title}
@@ -31,7 +34,7 @@ export const PostFrontView: React.FC<{ post: PostType }> = ({ post }) => {
                     Read about it
                     <ArrowUpRightIcon className='h-5 w-5' />
                 </CustomLink>
-            </SummaryContainer>
+            </SummaryContainer> */}
         </Container>
     );
 };
