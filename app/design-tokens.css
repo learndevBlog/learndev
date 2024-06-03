@@ -172,6 +172,7 @@
     /* spacing inset */
     --spacing-insert-quark: 4px 4px;
     --spacing-insert-nano: 8px 8px;
+    --spacing-insert-xxs: 12px 12px;
     --spacing-insert-xs: 16px 16px;
     --spacing-insert-sm: 24px 24px;
     --spacing-insert-md: 32px 32px;

@@ -1,14 +1,11 @@
 'use client'
-import { Button } from '@mui/material';
-import Image from 'next/image'
 
 import tw from 'tailwind-styled-components';
-import { CustomLink } from './CustomLink';
-import { CustomDropdown } from './CustomDropdown';
 import { useState } from 'react';
 import { Logo } from './Design/Logo/Logo';
 import { Icon } from './Design/Icon/Icon';
 import { InputText } from './Design/Input/Input';
+import { Avatar } from './Design/Avatar/Avatar';
 
 
 
@@ -23,16 +20,63 @@ export const Header = () => {
 
   return (
     <div className='flex mt-8 gap-4'>
+      <Logo mode='dark' labeled='none' />
       <Logo mode='dark' labeled='h' />
-      <Icon heroicon="HomeIcon" color="dark" size="md" />
-      <InputText
-        invalid={true}
-        disabled={false}
-        design='outlined'
-        leftHeroicon="BellIcon" 
-        placeholder="something to say"
-        rightHeroicon="ArrowRightIcon" 
-        /></div>
+      <Logo mode='light' labeled='v' />
+  
+      <Icon heroicon="HomeIcon" color="white" size="sm" />
+      <Icon heroicon="HomeIcon" color="warning-outlined" size="md" />
+      <Icon heroicon="HomeIcon" color="secondary" size="lg" />
+      <Icon heroicon="HomeIcon" color="dark-outlined" size="md" />
+      <Icon heroicon="HomeIcon" color="primary" size="sm" />
+
+      <div className='flex flex-col gap-2'>
+        <InputText
+          invalid={false}
+          disabled={false}
+          design='bordered'
+          leftHeroicon="BellIcon" 
+          placeholder="something to say"
+          rightHeroicon="ArrowRightIcon" 
+          />
+        <InputText
+          invalid={false}
+          disabled={false}
+          design='outlined'
+          placeholder="something to say"
+          rightHeroicon="ArrowRightIcon" 
+          />
+        <InputText
+          invalid={false}
+          disabled={false}
+          design='pure'
+          leftHeroicon="BellIcon" 
+          placeholder="something to say"
+          />
+        <InputText
+          invalid={false}
+          disabled={true}
+          design='pure'
+          leftHeroicon="BellIcon" 
+          placeholder="something to say"
+          />
+        <InputText
+          invalid={false}
+          disabled={true}
+          design='bordered'
+          leftHeroicon="BellIcon" 
+          placeholder="something to say"
+          />
+        <InputText
+          invalid={false}
+          disabled={true}
+          design='outlined'
+          leftHeroicon="BellIcon" 
+          placeholder="something to say"
+          />
+      </div>
+    </div>
+     
   )
 }
    

@@ -4,6 +4,8 @@ import PostList from "./components/Post/PostList";
 import { categories } from "./category";
 import { posts } from "./post";
 import { Subscription } from '../components/Subscription';
+import { Avatar } from '../components/Design/Avatar/Avatar';
+import { Button } from '../components/Design/Button/Button';
 
 
 export const metadata = {
@@ -29,14 +31,22 @@ const Page = async () => {
   const categories = await getCategories();
 
   return (
-    <div className='container'>
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
-      </Head>
-      <Subscription />
-      <PostList posts={posts} categories={categories} />
+    <div className='container flex gap-5'>
+      <div className="flex flex-col gap-5">
+        <Avatar profilePic='/images/solo-leveling.jpeg' size='sm'/>
+        <Avatar profilePic='/images/solo-leveling.jpeg' size='md' userName='Thiago Bomfim'/>
+        <Avatar profilePic='/images/solo-leveling.jpeg' userTitle='Software Engineer' size='lg' userName='João Pedro Roque'/>
+        <Avatar size='lg'/>
+        <Avatar size='md'/>
+        <Avatar size='sm'/>
+      </div>
+      <Button heroIcon='BellIcon' color='dark' label={"Try it on"} disabled={true}/>
+      <Button heroIcon='BellIcon' color='primary-outlined' label={"Try it on"} disabled={true}/>
+      <Button heroIcon='BellIcon' color='primary' label={"Try it on"}/>
+      <Button heroIcon='ArrowLeftIcon' color='dark' label={"Try it on"}/>
+      <Button heroIcon='ArrowRightIcon' color='dark-outlined' label={"Try it on"}/>
+      <Button heroIcon='HomeIcon' color='primary-outlined' label={"Try it on"}/>
+
     </div>
   )
 }
