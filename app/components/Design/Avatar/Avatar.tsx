@@ -27,7 +27,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         <Icon color='primary' size={size} heroicon='UserIcon' />
       )}
       {userName && (
-        <div className='flex flex-col w-[133px] h-[25px] justify-center'>
+        <div className='flex flex-col w-[133px] h-[25px] justify-center gap-1'>
           <span className='text-neutral-low-pure font-highlight font-regular text-xs'>{userName}</span>
           {userTitle && <span className='text-neutral-low-medium font-base text-xxxs'>{userTitle}</span>}
         </div>
