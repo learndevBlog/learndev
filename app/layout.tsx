@@ -15,8 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-          <main className='px-12'>
-            <section className='mt-5'>
+          <main className='flex min-h-screen justify-center'>
+            <section className='max-w-[1440px] bg-slate-300 w-full'>
               {children}
             </section>
           </main>

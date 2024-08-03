@@ -2,7 +2,7 @@
 import { tv } from 'tailwind-variants';
 
 export const inputWrapperVariants = tv({
-  base: 'group flex items-center justify-between rounded-md px-2 w-[320px] h-[48px]',
+  base: 'group flex items-center justify-between rounded-sm px-2 w-[320px] h-[48px]',
   variants: {
     design: {
         bordered: `

@@ -37,19 +37,19 @@ export const LOGO_ICON = {
     },
     light: {
       sm: {
-        none: '/icons/logo/light/pure/logo-dark-pure-sm.svg',
-        h: '/icons/logo/light/labeled_horizontally/logo-labeled-h-dark-sm.svg',
-        v: '/icons/logo/light/labeled_vertically/logo-labeled-v-dark-sm.svg',
+        none: '/icons/logo/light/pure/logo-light-pure-sm.svg',
+        h: '/icons/logo/light/labeled_horizontally/logo-labeled-h-light-sm.svg',
+        v: '/icons/logo/light/labeled_vertically/logo-labeled-v-light-sm.svg',
       },
       md: {
-        none: '/icons/logo/light/pure/logo-dark-pure-md.svg',
-        h: '/icons/logo/light/labeled_horizontally/logo-labeled-h-dark-md.svg',
-        v: '/icons/logo/light/labeled_vertically/logo-labeled-v-dark-md.svg',
+        none: '/icons/logo/light/pure/logo-light-pure-md.svg',
+        h: '/icons/logo/light/labeled_horizontally/logo-labeled-h-light-md.svg',
+        v: '/icons/logo/light/labeled_vertically/logo-labeled-v-light-md.svg',
       },
       lg: {
-        none: '/icons/logo/light/pure/logo-dark-pure-lg.svg',
-        h: '/icons/logo/light/labeled_horizontally/logo-labeled-h-dark-lg.svg',
-        v: '/icons/logo/light/labeled_vertically/logo-labeled-v-dark-lg.svg',
+        none: '/icons/logo/light/pure/logo-light-pure-lg.svg',
+        h: '/icons/logo/light/labeled_horizontally/logo-labeled-h-light-lg.svg',
+        v: '/icons/logo/light/labeled_vertically/logo-labeled-v-light-lg.svg',
       },
     },
   };

@@ -2,7 +2,8 @@ import React from 'react';
 import DynamicHeroIcon from './DynamicHeroeIcon';
 import { dynamicHeroIconVariants, iconCircleVariants } from './variants';
 
-
+// The heroicon name should be something like ArrowRightIcon, MenuIcon
+// in order for it to be download from heroicon repo
 
 interface IconProps {
   color?: 'primary' | 'secondary' | 'warning' | 'dark' | 'white' | 
