@@ -1,10 +1,11 @@
 import React from 'react'
 import PageTemplate from '../templates/PageTemplate'
+import Banner from '../components/Banner/Banner'
 
 function HomePage() {
   return (
     <PageTemplate>
-      Home Page
+      <Banner />
     </PageTemplate>
   )
 }

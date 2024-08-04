@@ -129,6 +129,9 @@ const config: Config = {
         medium: 'var(--font-weight-medium)',
         regular: 'var(--font-weight-regular)',
       },
+      backgroundImage: {
+        'circle-shape': "url('/images/shapes/circle.svg')"
+      }
     },
   },
   plugins: []
