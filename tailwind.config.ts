@@ -129,8 +129,25 @@ const config: Config = {
         medium: 'var(--font-weight-medium)',
         regular: 'var(--font-weight-regular)',
       },
+      backgroundPosition: {
+        bottom: 'bottom',
+        'bottom-4': 'center bottom 1rem',
+        center: 'center',
+        left: 'left',
+        'left-bottom': 'left bottom',
+        'left-top': 'left top',
+        right: 'right',
+        'right-bottom': 'right bottom',
+        'right-bottom-6': 'right bottom -6rem',
+        'right-top': 'right top',
+        top: 'top',
+        'top-4': 'center top 1rem',
+      },
       backgroundImage: {
-        'circle-shape': "url('/images/shapes/circle.svg')"
+        'circle-shape': "url('/images/shapes/circle.svg')",
+        'square-shape': "url('/images/shapes/square.svg')",
+        'triangle-shape': "url('/images/shapes/circle.svg')",
+        'rectangular-shape': "url('/images/shapes/circle.svg')",
       }
     },
   },
