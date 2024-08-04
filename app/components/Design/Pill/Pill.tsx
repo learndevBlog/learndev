@@ -1,10 +1,9 @@
 import React from 'react'
+import { pillVariants } from './variants';
 
-const Pill = ({children}: {children: React.ReactNode}) => {
+const Pill = ({onClick, color}: { onClick?: Function, color?: string}) => {
   return (
-    <div className='rounded-pill px-4 py-1 bg-primary-light text-neutral-low-pure font-base text-xxs'>
-      {children}
-    </div>
+    <div className={pillVariants()}></div>
   )
 }
 

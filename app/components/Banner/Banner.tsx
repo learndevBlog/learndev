@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Icon } from '../Design/Icon/Icon'
 import { Avatar } from '../Design/Avatar/Avatar'
-import Pill from '../Design/Pill/Pill'
+import Tag from '../Design/Tag/Tag'
+import CustomLink from '../Design/Link/Link'
 
 const FeaturedArticles = [
     {
@@ -61,17 +62,14 @@ const Banner = () => {
                     <div className='h-[622px] w-[690px] flex flex-col gap-10 py-16 px-4'>
                         <div className='flex justify-between items-center w-full'>
                             <span className='leading-lg font-base text-xxxs'>FEATURED ARTICLE</span>
-                            <Pill>{article.category}</Pill>
+                            <Tag>{article.category}</Tag>
                         </div>
                         <div className='h-[368px] overflow-clip'>
                             <span className='font-semibold font-highlight text-display leading-xs'>{article.description}</span>
                         </div>
                         <div className='flex justify-between'>
                             <Avatar profilePic={article.avatar} size='md' userName={article.username} />
-                            <Link className='flex items-center' href={article.href}>
-                                Read more
-                                <Icon heroicon='ArrowRightIcon' size='sm' circle={false} color='dark-outlined' />
-                            </Link>
+                            <CustomLink text='Read more' heroicon='ArrowRightIcon' href={article.href} />
                         </div>
                     </div>
                 </div>

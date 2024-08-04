@@ -135,6 +135,7 @@ const config: Config = {
         center: 'center',
         left: 'left',
         'left-bottom': 'left bottom',
+        'left-top-6': 'left top -6rem',
         'left-top': 'left top',
         right: 'right',
         'right-bottom': 'right bottom',
@@ -148,6 +149,7 @@ const config: Config = {
         'square-shape': "url('/images/shapes/square.svg')",
         'triangle-shape': "url('/images/shapes/circle.svg')",
         'rectangular-shape': "url('/images/shapes/circle.svg')",
+        'losango-shape': "url('/images/shapes/losango.svg')",
       }
     },
   },
