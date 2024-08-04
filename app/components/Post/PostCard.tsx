@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react';
 import { Avatar } from '../Design/Avatar/Avatar';
 import Link from 'next/link';
 import { Icon } from '../Design/Icon/Icon';
-import { Card } from '../Design/Card/Card';
 import CustomLink from '../Design/Link/Link';
 
 

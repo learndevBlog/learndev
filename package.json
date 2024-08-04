@@ -18,7 +18,8 @@
     "react": "^18",
     "react-dom": "^18",
     "tailwind-styled-components": "^2.2.0",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.2.1",
+    "vercel": "^35.2.3"
   },
   "devDependencies": {
     "@types/node": "^20",
