@@ -1,10 +1,11 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Icon } from '../Design/Icon/Icon'
 import { Avatar } from '../Design/Avatar/Avatar'
 import Tag from '../Design/Tag/Tag'
 import CustomLink from '../Design/Link/Link'
+import Pill from '../Design/Pill/Pill'
 
 const FeaturedArticles = [
     {
@@ -36,13 +37,15 @@ const FeaturedArticles = [
 const Banner = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % FeaturedArticles.length);
-    };
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         setCurrentIndex((prevIndex) => (prevIndex + 1) % FeaturedArticles.length)
+    //     }, 3000)
+    // }, [])
 
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + FeaturedArticles.length) % FeaturedArticles.length);
-    };
+    const handlePillClick = (index: number) => {
+        setCurrentIndex(index)
+    }
 
     return (
         <div className='h-screen w-full max-w-[1440px] flex z-10 overflow-hidden  
@@ -75,14 +78,11 @@ const Banner = () => {
                 </div>
             ))}
             {/* Carrossel control */}
-            <div className='flex justify-center items-center h-[64px] text-neutral-low-pure 
+            <div className='flex justify-center items-center h-[64px] text-neutral-low-pure gap-4
                 bg-transparent absolute bottom-4 w-full max-w-[1440px] px-4 bg-black'>
-                <button onClick={prevSlide} className='bg-gray-300 p-2 rounded-full'>
-                    <Icon heroicon='ArrowLeftIcon' size='sm' circle={false} color='dark-outlined' />
-                </button>
-                <button onClick={nextSlide} className='bg-gray-300 p-2 rounded-full'>
-                    <Icon heroicon='ArrowRightIcon' size='sm' circle={false} color='dark-outlined' />
-                </button>
+                {FeaturedArticles.map((item, index) => (
+                    <Pill active={currentIndex === index} color='default' onClick={() => handlePillClick(index)} key={index} />
+                ))}
             </div>
         </div>
     )

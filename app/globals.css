@@ -39,3 +39,38 @@ p {
     padding: 0;
     margin: 0;
 }
+
+/* TODO  find a way to use this on tailwind */
+.pill {
+position: relative;
+overflow: hidden;
+}
+
+.pill {
+    position: relative;
+    overflow: hidden;
+}
+
+.pill.active {
+    width: 32px;
+    border-radius: 8px;
+}
+  
+.pill::after {
+    content: '';
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00c0e3; /* ou a cor que desejar */
+    transition: width 0.3s ease; /* Ajuste conforme necessário */
+}
+
+.pill.active::after {
+    width: 70%; /* Ajuste conforme necessário */
+}
+
+
+
