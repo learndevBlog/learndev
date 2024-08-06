@@ -29,7 +29,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
             <div className='w-full flex flex-col gap-10'>
                 <div className='flex justify-between'>
                     <span className='font-base text-xxs'>{order}</span>
-                    <Pill />
+                    <Pill color='primary' active={false} />
                 </div>
                 <div className='flex flex-col gap-4'>
                     <span className='font-semibold text-lg text-neutral-low-pure'>{category}</span>

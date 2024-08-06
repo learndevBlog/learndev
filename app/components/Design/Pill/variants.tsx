@@ -28,7 +28,7 @@ export const pillVariants = tv({
       primary: `
         bg-primary-light
         hover:w-8
-        group-hover:w-16
+        group-hover:w-10
       `}
     }
 });
