@@ -1,10 +1,6 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Avatar } from '../Design/Avatar/Avatar';
-import Link from 'next/link';
-import { Icon } from '../Design/Icon/Icon';
 import CustomLink from '../Design/Link/Link';
-
-
 
 interface PostCardProps {
   banner: string
