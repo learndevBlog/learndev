@@ -48,14 +48,14 @@ const Banner = () => {
     }
 
     return (
-        <div className='h-screen w-full max-w-[1440px] flex z-10 overflow-hidden  
+        <div className='h-screen w-full flex z-10 overflow-hidden  
             transition-transform ease-out duration-500 relative'>
             {/* Carrossel card */}
             {FeaturedArticles.map((article, index) => (
                 <div 
                     key={index} 
                     className={`
-                        h-full w-full max-w-[1440px]
+                        h-full w-full
                         flex-shrink-0 flex items-center justify-center 
                         ${article['bg-image']} bg-no-repeat
                     `}  
@@ -79,7 +79,7 @@ const Banner = () => {
             ))}
             {/* Carrossel control */}
             <div className='flex justify-center items-center h-[64px] text-neutral-low-pure gap-4
-                bg-transparent absolute bottom-4 w-full max-w-[1440px] px-4 bg-black'>
+                bg-transparent absolute bottom-4 w-full px-4 bg-black'>
                 {FeaturedArticles.map((item, index) => (
                     <Pill active={currentIndex === index} color='default' onClick={() => handlePillClick(index)} key={index} />
                 ))}

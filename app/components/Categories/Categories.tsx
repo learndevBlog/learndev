@@ -1,4 +1,5 @@
 import CategoryCard from './CategoryCard'
+import Image from 'next/image'
 
 const categories = [
     {
@@ -29,17 +30,23 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className='w-full h-screen px-16 pb-16 pt-28 flex flex-col gap-6
-        bg-square-shape bg-neutral-high-light bg-right-bottom-6 bg-no-repeat'>
-      <div className='flex flex-col gap-4'>
-        <span className='leading-default font-bold font-highlight text-xl'>Categories</span>
-        <p className='font-base leading-default text-sm'>About what do you want to read?</p>
-      </div>
-      <div className='w-full max-w-[776px] flex gap-4 flex-wrap'>
+    <div className='w-full bg-neutral-high-light flex items-center justify-center py-16 h-screen'>
+      <div className='flex w-full max-w-[1440px] gap-6 items-center'>
+        <div className='flex flex-col w-full py-4'>
+          <div className='flex flex-col gap-4 pb-4'>
+            <span className='leading-default font-bold font-highlight text-xl'>Categories</span>
+            <p className='font-base leading-default text-sm'>About what do you want to read?</p>
+          </div>
+          <div className='flex-1 w-full max-w-[776px] flex gap-4 flex-wrap'>
             {categories.map((category, index) => (
                 <CategoryCard key={index} order={category.order} description={category.description} href={category.href} category={category.category} />
             ))}
-      </div>
+          </div>
+        </div>
+        {/* <div>
+            <Image src='/images/shapes/squareImage.svg' alt='square shape' width={720} height={720} className='bg-black' />
+          </div> */}
+        </div>
     </div>
   )
 }

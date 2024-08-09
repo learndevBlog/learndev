@@ -29,39 +29,41 @@ const PostList = () => {
     : posts.filter(post => post.category === selectedCategory)
 
   return (
-    <div className='p-16 flex flex-col justify-center items-center w-full gap-6'>
+    <div className='py-12 flex flex-col justify-center items-center w-full'>
       {/* Category Filter */}
-      <div className='w-full flex justify-center'>
-        <div className='flex bg-neutral-high-light px-4 py-1 rounded-md'>
-          {categories.map((category, index) => (
-            <button
+      <div className='w-full max-w-[1440px] bg-white flex flex-col gap-6'>
+        <div className='flex justify-center'>
+          <div className='flex bg-neutral-high-light px-4 py-1 rounded-md'>
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 flex items-center justify-center ${selectedCategory === category ? 'border rounded-sm bg-primary-pure' : ''}`}
+              >
+                <span className={`font-base text-xs leading-lg ${selectedCategory === category ? 'text-neutral-high-pure' : 'text-neutral-low-pure'}`}>
+                  {category}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Post Cards */}
+        <div className='px-4 py-6 flex flex-wrap gap-6 w-full items-center'>
+          {filteredPosts.map((post, index) => (
+            <PostCard
               key={index}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 flex items-center justify-center ${selectedCategory === category ? 'border rounded-sm bg-primary-pure' : ''}`}
-            >
-              <span className={`font-base text-xs leading-lg ${selectedCategory === category ? 'text-neutral-high-pure' : 'text-neutral-low-pure'}`}>
-                {category}
-              </span>
-            </button>
+              banner={post.banner}
+              category={post.category}
+              author={post.author}
+              post={post.post}
+            />
           ))}
         </div>
-      </div>
 
-      {/* Post Cards */}
-      <div className='px-4 py-6 flex flex-wrap gap-6 w-full'>
-        {filteredPosts.map((post, index) => (
-          <PostCard
-            key={index}
-            banner={post.banner}
-            category={post.category}
-            author={post.author}
-            post={post.post}
-          />
-        ))}
-      </div>
-
-      <div>
-        <Button color='primary-outlined' label='See more posts' />
+        <div className='flex justify-center'>
+          <Button color='primary-outlined' label='See more posts' />
+        </div>
       </div>
     </div>
   )
