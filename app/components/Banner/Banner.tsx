@@ -1,7 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { Icon } from '../Design/Icon/Icon'
 import { Avatar } from '../Design/Avatar/Avatar'
 import Tag from '../Design/Tag/Tag'
 import CustomLink from '../Design/Link/Link'
@@ -50,18 +48,18 @@ const Banner = () => {
                     className={`
                         h-full w-full
                         flex-shrink-0 flex items-center justify-center 
-                        ${article['bg-image']} bg-no-repeat
+                        ${article['bg-image']} bg-no-repeat px-4 sm:px-0
                     `}  
                     style={{ 
                         transform: `translateX(-${currentIndex * 100}%)`,
                     }}>
-                    <div className='h-[622px] w-full  max-w-[690px] flex flex-col gap-10 py-16 px-4'>
+                    <div className='sm:h-[622px] w-full max-w-[690px] flex flex-col gap-10 py-2 sm:py-16 px-4'>
                         <div className='flex justify-between items-center w-full'>
                             <span className='leading-lg font-base text-xxxs'>FEATURED ARTICLE</span>
                             <Tag>{article.category}</Tag>
                         </div>
                         <div className='h-[368px] overflow-clip'>
-                            <span className='font-semibold font-highlight text-display leading-xs'>{article.description}</span>
+                            <span className='font-semibold font-highlight text-xxl sm:text-display leading-md sm:leading-xs'>{article.description}</span>
                         </div>
                         <div className='flex justify-between'>
                             <Avatar profilePic={article.avatar} size='md' userName={article.username} />

@@ -30,14 +30,14 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className='w-full bg-neutral-high-light flex items-center justify-center py-16 lg:h-screen'>
-      <div className='flex w-full max-w-[1440px] gap-6 items-center'>
+    <div className='w-full bg-neutral-high-light flex items-center justify-center py-8 sm:py-16 lg:h-screen px-0 xl:px-4 2xl:px-8'>
+      <div className='flex w-full xl:max-w-[1440px] px-4 xl:px-0'>
         <div className='flex flex-col w-full py-4'>
-          <div className='flex flex-col gap-4 pb-4'>
+          <div className='flex flex-col gap-4 pb-4  xl:justify-start xl:items-start justify-center items-center'>
             <span className='leading-default font-bold font-highlight text-xl'>Categories</span>
             <p className='font-base leading-default text-sm'>About what do you want to read?</p>
           </div>
-          <div className='flex-1 w-full max-w-[776px] flex gap-4 flex-wrap'>
+          <div className='w-full xl:max-w-[776px] flex gap-4 flex-wrap xl:justify-start xl:items-start justify-center items-center'>
             {categories.map((category, index) => (
                 <CategoryCard key={index} order={category.order} description={category.description} href={category.href} category={category.category} />
             ))}

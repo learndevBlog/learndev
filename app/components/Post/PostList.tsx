@@ -33,7 +33,7 @@ const PostList = () => {
       {/* Category Filter */}
       <div className='w-full max-w-[1440px] bg-white flex flex-col gap-6'>
         <div className='flex justify-center'>
-          <div className='flex flex-wrap bg-neutral-high-light px-4 py-1 rounded-md'>
+          <div className='flex flex-wrap bg-neutral-high-light px-4 py-1 rounded-md items-center justify-center'>
             {categories.map((category, index) => (
               <button
                 key={index}
@@ -49,7 +49,7 @@ const PostList = () => {
         </div>
 
         {/* Post Cards */}
-        <div className='px-4 py-6 flex flex-wrap gap-6 w-full items-center'>
+        <div className='px-4 xl:px-8 2xl:px-0 py-6 flex flex-wrap gap-6 w-full items-center justify-center xl:justify-start xl:items-start'>
           {filteredPosts.map((post, index) => (
             <PostCard
               key={index}

@@ -24,7 +24,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
     href
 }) => {
   return (
-    <div className='max-w-[380px] w-full border rounded-lg hover:border-primary-pure h-fit hover:shadow-level3 group hover:cursor-pointer'>
+    <div className='lg:max-w-[380px] w-full border rounded-lg hover:border-primary-pure h-fit hover:shadow-level3 group hover:cursor-pointer'>
         <div className={`rounded-lg p-xxs bg-neutral-high-pure h-full`}>
             <div className='w-full flex flex-col gap-10'>
                 <div className='flex justify-between'>
