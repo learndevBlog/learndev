@@ -68,7 +68,7 @@ const Banner = () => {
                     style={{ 
                         transform: `translateX(-${currentIndex * 100}%)`,
                     }}>
-                    <div className='sm:h-[622px] w-full max-w-[690px] flex flex-col gap-10 py-2 sm:py-16 px-4'>
+                    <div className='sm:h-[622px] w-full max-w-[690px] flex flex-col gap-10 py-2 sm:py-16 px-4 mt-12 sm:mt-0'>
                         <div className='flex justify-between items-center w-full'>
                             <span className='leading-lg font-base text-xxxs'>FEATURED ARTICLE</span>
                             <Tag>{article.category}</Tag>
@@ -85,7 +85,7 @@ const Banner = () => {
             ))}
             {/* Carrossel control */}
             <div className='flex justify-center items-center h-[64px] text-neutral-low-pure gap-4
-                bg-transparent absolute bottom-4 w-full px-4 bg-black'>
+                bg-transparent absolute  bottom-0 sm:bottom-4 w-full px-4 bg-black'>
                 {FeaturedArticles.map((item, index) => (
                     <Pill active={currentIndex === index} color='default' onClick={() => handlePillClick(index)} key={index} />
                 ))}
