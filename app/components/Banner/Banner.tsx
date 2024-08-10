@@ -34,13 +34,28 @@ const FeaturedArticles = [
 
 const Banner = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [bannerHeight, setBannerHeight] = useState('100vh');
+
+    useEffect(() => {
+        const updateBannerHeight = () => {
+            const vh = window.innerHeight * 0.01;
+            setBannerHeight(`${vh * 100}px`);
+        }
+        updateBannerHeight();
+
+        window.addEventListener('resize', updateBannerHeight);
+        return () => window.removeEventListener('resize', updateBannerHeight);
+    }, [])
+
     const handlePillClick = (index: number) => {
         setCurrentIndex(index)
     }
 
     return (
-        <div className='h-screen w-full flex z-10 overflow-hidden  
-            transition-transform ease-out duration-500 relative'>
+        <div className='w-full flex z-10 overflow-hidden  
+            transition-transform ease-out duration-500 relative'
+            style={{ height: bannerHeight }}
+            >
             {/* Carrossel card */}
             {FeaturedArticles.map((article, index) => (
                 <div 
