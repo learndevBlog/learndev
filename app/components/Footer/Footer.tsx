@@ -9,7 +9,7 @@ const Footer = () => {
             <span className='font-medium text-sm'>Sitemap | Privacy Policy | Accessibility</span>
             <span className='font-regular text-xxxs'>© 2024 LearnDev. All Rights Reserved.</span>
         </div>
-        <Logo labeled='h' mode='light' />
+        <Logo size='lg' labeled='h' mode='light' />
       </div>
     </div>
   )
