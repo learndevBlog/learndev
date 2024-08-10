@@ -33,7 +33,7 @@ const PostList = () => {
       {/* Category Filter */}
       <div className='w-full max-w-[1440px] bg-white flex flex-col gap-6'>
         <div className='flex justify-center'>
-          <div className='flex bg-neutral-high-light px-4 py-1 rounded-md'>
+          <div className='flex flex-wrap bg-neutral-high-light px-4 py-1 rounded-md'>
             {categories.map((category, index) => (
               <button
                 key={index}

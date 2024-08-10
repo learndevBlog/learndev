@@ -30,7 +30,7 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className='w-full bg-neutral-high-light flex items-center justify-center py-16 h-screen'>
+    <div className='w-full bg-neutral-high-light flex items-center justify-center py-16 lg:h-screen'>
       <div className='flex w-full max-w-[1440px] gap-6 items-center'>
         <div className='flex flex-col w-full py-4'>
           <div className='flex flex-col gap-4 pb-4'>

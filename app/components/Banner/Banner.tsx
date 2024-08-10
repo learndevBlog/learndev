@@ -36,13 +36,6 @@ const FeaturedArticles = [
 
 const Banner = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-
-    // useEffect(() => {
-    //     const timer = setInterval(() => {
-    //         setCurrentIndex((prevIndex) => (prevIndex + 1) % FeaturedArticles.length)
-    //     }, 3000)
-    // }, [])
-
     const handlePillClick = (index: number) => {
         setCurrentIndex(index)
     }
@@ -62,7 +55,7 @@ const Banner = () => {
                     style={{ 
                         transform: `translateX(-${currentIndex * 100}%)`,
                     }}>
-                    <div className='h-[622px] w-[690px] flex flex-col gap-10 py-16 px-4'>
+                    <div className='h-[622px] w-full  max-w-[690px] flex flex-col gap-10 py-16 px-4'>
                         <div className='flex justify-between items-center w-full'>
                             <span className='leading-lg font-base text-xxxs'>FEATURED ARTICLE</span>
                             <Tag>{article.category}</Tag>
