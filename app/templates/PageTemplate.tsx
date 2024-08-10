@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer'
 
 const PageTemplate = ({children}: {children: React.ReactNode}) => {
   return (
-    <div className='w-full flex justify-center flex-col items-center'>
+    <div className='w-full'>
       <Header />
       {children}
       <Footer />

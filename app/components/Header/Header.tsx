@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <div className={`transition-all duration-300 ease-in-out w-full flex 
-      justify-center h-20 fixed top-0 z-20 px-16`}
+      justify-center h-20 fixed top-0 z-20 px-6 lg:px-16`}
       style={{ 
         backgroundColor: bgColor,
         backdropFilter: bgFilter
@@ -40,16 +40,16 @@ const Header = () => {
           borderBottom: `1px solid rgba(128, 128, 128, ${borderOpacity})`
         }}
       >
-        <Logo mode='dark' labeled='h' />
+        <Logo size='lg' mode='dark' labeled='h' />
         
         <p className={`transition-opacity duration-300 ease-in-out w-full max-w-[246px] 
-          leading-md font-base text-xs`} 
+          leading-md font-base text-xs hidden lg:block`} 
           style={{ opacity }}>
           Aliquam augue dui, ultrices nec nulla id, laoreet iaculis arcu.
         </p>
         
-        <div className='flex items-center w-full max-w-[400px] justify-between'>
-          <InputText placeholder="Sign up for updates" rightHeroicon='ArrowRightIcon' design="outlined" />
+        <div className='flex items-center w-full max-w-[400px] justify-end lg:justify-between'>
+          <InputText className='hidden lg:block' placeholder="Sign up for updates" rightHeroicon='ArrowRightIcon' design="outlined" />
           <Icon heroicon='MenuIcon' color='dark-outlined' size='md'/>
         </div>
       </div>
